@@ -6,12 +6,44 @@ Simple CI script that writes build/test results into a log file. Supports Git on
 Installation
 ------------
 
-TODO
+Add a new user:
+
+    adduser ci
+
+Clone repo into /opt/log-ci and set permissions:
+
+    cd /opt
+    git clone git@github.com:rla/log-ci.git
+    chown -R ci:ci /opt/log-ci
+
+Create symlink:
+
+    ln -sf /opt/log-ci/log-ci.sh /usr/local/bin/log-ci
+
+Create log file:
+
+    touch /opt/log-ci/log.txt
+    chown ci:ci /opt/log-ci/log.txt
 
 Usage
 -----
 
-TODO
+Add project as ci user:
+
+    cd ~
+    git clone git@github.com:your_user/your_repo.git
+
+Set up log-ci configuration:
+
+    cd your repo
+    nano .log-ci-config
+
+Configuration looks similar to:
+
+    project="your_project"
+    build="make ci"
+    remote="origin"
+    branch="master"
 
 License
 -------
