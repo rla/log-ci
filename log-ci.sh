@@ -89,8 +89,9 @@ if [[ "$commit" > "$last" ]]; then
     echo "[$project]: building"
 
     cd "$dir"
+    eval "$build" 2>&1 | sed "s/^/\[$project\]: /g"
 
-    if eval "$build" 2>&1 | sed "s/^/\[$project\]: /g"; then
+    if [ ${PIPESTATUS[0]} -eq 0 ]; then
         echo "[$project]: success"
         echo "$commit" > "$last_build"
     else

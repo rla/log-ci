@@ -1,7 +1,8 @@
 Log-CI
 ======
 
-Simple CI script that writes build/test results into a log file. Supports Git only.
+Simple CI script that writes build/test results into a log file.
+Supports Git only (version 1.7.7.2 or later).
 
 Installation
 ------------
