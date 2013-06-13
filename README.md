@@ -35,7 +35,7 @@ Add project as ci user:
 
 Set up log-ci configuration:
 
-    cd your repo
+    cd your_repo
     nano .log-ci-config
 
 Configuration looks similar to:
@@ -44,6 +44,14 @@ Configuration looks similar to:
     build="make ci"
     remote="origin"
     branch="master"
+
+Tu run periodically, use cron:
+
+    */10 * * * * log-ci ~/your_repo
+
+Don't forget to properly set up PATH in the crontab file, example:
+
+    PATH=/usr/local/bin:/usr/bin:/bin
 
 License
 -------
